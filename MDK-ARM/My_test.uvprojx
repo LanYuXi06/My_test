@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_PWR_LDO_SUPPLY,USE_HAL_DRIVER,STM32H723xx</Define>
+              <Define>USE_PWR_LDO_SUPPLY,USE_HAL_DRIVER,STM32H723xx.ARM_MATH_CM7</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;..\FDCANHandler;..\My_PID</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;..\FDCANHandler;..\My_PID;..\Gimbal</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -658,6 +658,21 @@
               <FileName>My_PID.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\My_PID\My_PID.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Gimbal</GroupName>
+          <Files>
+            <File>
+              <FileName>Gimbal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Gimbal\Gimbal.c</FilePath>
+            </File>
+            <File>
+              <FileName>DM_Motor_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Gimbal\DM_Motor_bsp.c</FilePath>
             </File>
           </Files>
         </Group>

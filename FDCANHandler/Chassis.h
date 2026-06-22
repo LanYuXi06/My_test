@@ -51,5 +51,6 @@ extern uint8_t ChassisTxBuf[16];
 
 void Chassis_Init(void);
 void Chassis_TestControlFromRemote(void);
-
+void debug(void);
+void PID_Command(char *ch);
 #endif

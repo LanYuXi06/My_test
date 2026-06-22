@@ -38,3 +38,13 @@ my_test\usart.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 my_test\usart.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 my_test\usart.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 my_test\usart.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+my_test\usart.o: ..\FDCANHandler\Chassis.h
+my_test\usart.o: ../Inc/fdcan.h
+my_test\usart.o: ..\FDCANHandler\FDCANHandler.h
+my_test\usart.o: ..\FDCANHandler\FDCANBsp.h
+my_test\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+my_test\usart.o: ..\FDCANHandler\FDCANFilter.h
+my_test\usart.o: ..\FDCANHandler\Remote.h
+my_test\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+my_test\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+my_test\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

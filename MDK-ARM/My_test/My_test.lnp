@@ -39,6 +39,8 @@
 "my_test\pid.o"
 "my_test\bspm3508.o"
 "my_test\my_pid.o"
+"my_test\gimbal.o"
+"my_test\dm_motor_bsp.o"
 --strict --scatter "My_test\My_test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

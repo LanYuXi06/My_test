@@ -29,7 +29,10 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+void uart_SendByte(uint8_t Byte);
+void uart_SendString(char *mString);
+void uart_Printf(char *format, ...);
+void UART_Start(void);
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart5;

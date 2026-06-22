@@ -1,4 +1,23 @@
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'My_test'
-"My_test\My_test.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:01
+compiling Chassis.c...
+"no source": Warning:  #2774-D: '=' assumed following macro name "STM32H723xx" in command-line definition
+..\FDCANHandler\FDCANFilter.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\FDCANHandler\FDCANBsp.h(27): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\FDCANHandler\FDCANHandler.h(44): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\FDCANHandler\Chassis.c(179): warning:  #177-D: variable "wheel_current"  was declared but never referenced
+      int32_t wheel_current = 0;
+..\FDCANHandler\Chassis.c(180): warning:  #177-D: variable "yaw_current"  was declared but never referenced
+      int32_t yaw_current = 0;
+..\FDCANHandler\Chassis.c: 6 warnings, 0 errors
+compiling My_PID.c...
+"no source": Warning:  #2774-D: '=' assumed following macro name "STM32H723xx" in command-line definition
+..\My_PID\My_PID.c: 1 warning, 0 errors
+linking...
+Program Size: Code=50948 RO-data=1504 RW-data=92 ZI-data=3956  
+FromELF: creating hex file...
+"My_test\My_test.axf" - 0 Error(s), 7 Warning(s).
+Build Time Elapsed:  00:00:09

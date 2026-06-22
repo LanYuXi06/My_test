@@ -111,7 +111,7 @@ Remote_Init(&RC);//DR16���ݽ���
 FDCAN_Init();//׼��0x6FF���;�����жϴ�  
 Chassis_Init();//��ʼ�����֣��ϵ�ȫ������
 HAL_TIM_Base_Start_IT(&htim6);
-
+UART_Start();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -119,7 +119,7 @@ HAL_TIM_Base_Start_IT(&htim6);
   while (1)
   {
 		Remote_Is_Online();
-		
+		debug();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

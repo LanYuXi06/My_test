@@ -21,7 +21,21 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-
+uint8_t uart_TxPacket[1];                 
+uint8_t uart_RxPacket[1];               
+uint8_t uart_RxFlag;  
+uint8_t Serial_RxFlag;
+char Serial_RxPacket[100];
+uint8_t ByteRecv;                       
+uint8_t X;                               
+uint8_t Y;                              
+uint8_t Z;                              
+#include "Chassis.h"
+#include <stdarg.h>
+#include "stdio.h"
+uint8_t rx;
+uint8_t rx_buf[20];
+uint8_t rx_count=0;
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart5;
@@ -282,5 +296,64 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void uart_SendByte(uint8_t Byte)
+{
+    HAL_UART_Transmit(&huart10, &Byte, 1, HAL_MAX_DELAY); 
+}
 
+
+void uart_SendString(char *mString)
+{
+    for (uint16_t i = 0; mString[i] != '\0'; i++) 
+    {
+        uart_SendByte(mString[i]); 
+    }
+}
+
+int fputc(int ch, FILE *f)
+{
+    uart_SendByte(ch); 
+    return ch; 
+}
+
+void uart_Printf(char *format, ...)
+{
+    char String[100];
+    va_list arg;
+    va_start(arg, format); 
+    vsprintf(String, format, arg); 
+    va_end(arg); 
+    uart_SendString(String); 
+}
+void UART_Start(void)
+{
+    HAL_UART_Receive_IT(&huart10, &rx, 1);
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if(huart->Instance==USART10)
+	{
+		if(rx=='\n'||rx=='\r')
+		{
+		rx_buf[rx_count]='\0';
+			
+			if(rx_count>0)
+			{
+			PID_Command((char*)rx_buf);
+			}
+		rx_count=0;
+		}
+		else
+		{
+			if(rx_count<sizeof(rx_buf)-1)
+			{
+			rx_buf[rx_count]=rx;
+				rx_count++;
+			}
+		}
+		
+	}
+ HAL_UART_Receive_IT(&huart10, &rx, 1);
+}
 /* USER CODE END 1 */
